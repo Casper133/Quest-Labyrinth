@@ -11,8 +11,8 @@ import com.casper.labyrinth.view.impl.ConsoleReader;
 import com.casper.labyrinth.view.impl.ConsoleWriter;
 
 public class AppController {
-    private static MessageWriter messageWriter = new ConsoleWriter();
-    private static MessageReader messageReader = new ConsoleReader();
+    private static final MessageWriter messageWriter = new ConsoleWriter();
+    private static final MessageReader messageReader = new ConsoleReader();
 
     public static void start() {
         Room currentRoom = LevelGenerator.generateLevel();
