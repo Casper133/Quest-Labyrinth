@@ -7,6 +7,8 @@ public abstract class Room {
 
     private Room previousRoom;
 
+    private boolean roomVisited = false;
+
 
     public Room(Room firstExitRoom, Room secondExitRoom) {
         this.firstExitRoom = firstExitRoom;
@@ -29,6 +31,15 @@ public abstract class Room {
     public void setPreviousRoom(Room room) {
         previousRoom = room;
     }
+
+    public boolean isRoomVisited() {
+        return roomVisited;
+    }
+
+    public void markRoomAsVisited() {
+        roomVisited = true;
+    }
+
 
     public abstract String getRoomMessage();
 

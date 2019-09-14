@@ -9,11 +9,12 @@ public class Laboratory extends Room {
 
     @Override
     public String getRoomMessage() {
-        return null;
+        return "За дверью оказалась светлая комната, " +
+                "полная медицинского оборудования, белых халатов и пробирок.";
     }
 
     @Override
     public String getRoomName() {
-        return null;
+        return "Лаборатория";
     }
 }

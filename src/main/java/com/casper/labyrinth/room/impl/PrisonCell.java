@@ -9,11 +9,12 @@ public class PrisonCell extends Room {
 
     @Override
     public String getRoomMessage() {
-        return null;
+        return "Вы зашли в сырое помещение с клеткой внутри. " +
+                "На табличке надпись: \"Тюремная камера #133\"";
     }
 
     @Override
     public String getRoomName() {
-        return null;
+        return "Тюремная камера";
     }
 }

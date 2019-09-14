@@ -9,11 +9,12 @@ public class ControlRoom extends Room {
 
     @Override
     public String getRoomMessage() {
-        return null;
+        return "В комнате расположен огромный компьютер и множество мониторов. " +
+                "\"Вероятно, пункт управления\", - подумали Вы.";
     }
 
     @Override
     public String getRoomName() {
-        return null;
+        return "Комната управления";
     }
 }
