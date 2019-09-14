@@ -6,7 +6,7 @@ public class ControlRoom extends Room {
     @Override
     public String getRoomMessage() {
         return "В комнате расположен огромный компьютер и множество мониторов. " +
-                "\"Вероятно, пункт управления\", - подумали Вы.";
+                "\"Вероятно, комната управления\", - подумали Вы.";
     }
 
     @Override

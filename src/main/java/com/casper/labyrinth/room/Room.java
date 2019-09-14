@@ -5,17 +5,13 @@ public abstract class Room {
 
     private Room secondExitRoom;
 
-    private Room previousRoom;
+    private Room backRoom;
 
     private boolean roomVisited = false;
 
 
     public Room getFirstExitRoom() {
         return firstExitRoom;
-    }
-
-    public void setFirstExitRoom(Room firstExitRoom) {
-        this.firstExitRoom = firstExitRoom;
     }
 
     public Room getSecondExitRoom() {
@@ -26,16 +22,16 @@ public abstract class Room {
         this.firstExitRoom = firstExitRoom;
         this.secondExitRoom = secondExitRoom;
 
-        this.firstExitRoom.setPreviousRoom(this);
-        this.secondExitRoom.setPreviousRoom(this);
+        this.firstExitRoom.setBackRoom(this);
+        this.secondExitRoom.setBackRoom(this);
     }
 
-    public Room getPreviousRoom() {
-        return previousRoom;
+    public Room getBackRoom() {
+        return backRoom;
     }
 
-    private void setPreviousRoom(Room room) {
-        previousRoom = room;
+    private void setBackRoom(Room room) {
+        backRoom = room;
     }
 
     public boolean isRoomVisited() {

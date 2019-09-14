@@ -6,6 +6,6 @@ public class YellowLivingRoom extends LivingRoom {
     @Override
     public String getRoomMessage() {
         return "Перед собой Вы видите несколько кроватей, стол и шкаф. " +
-                "На полу большой желтый ковер.";
+                "На полу большой жёлтый ковер.";
     }
 }

@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ConsoleReaderImpl implements MessageReader {
+public class ConsoleReader implements MessageReader {
     private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
     @Override

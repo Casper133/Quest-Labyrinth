@@ -2,6 +2,7 @@ package com.casper.labyrinth.generator;
 
 import com.casper.labyrinth.room.Room;
 import com.casper.labyrinth.room.impl.ControlRoom;
+import com.casper.labyrinth.room.impl.DeadEnd;
 import com.casper.labyrinth.room.impl.GreenLivingRoom;
 import com.casper.labyrinth.room.impl.Laboratory;
 import com.casper.labyrinth.room.impl.OrangeLivingRoom;
@@ -40,7 +41,10 @@ public class LevelGenerator {
         rooms.remove(0);
 
         int randomLeafIndex = (int) (rooms.size() * Math.random());
-        rooms.get(randomLeafIndex).setFirstExitRoom(new SecurityRoom());
+        rooms.get(randomLeafIndex).setExitRooms(new SecurityRoom(), new DeadEnd());
+        rooms.remove(randomLeafIndex);
+
+        rooms.forEach(room -> room.setExitRooms(new DeadEnd(), new DeadEnd()));
 
         return level;
     }
