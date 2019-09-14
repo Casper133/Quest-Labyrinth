@@ -17,19 +17,7 @@ public class AppController {
     public static void start() {
         Room currentRoom = LevelGenerator.generateLevel();
 
-        messageWriter.writeMessage("\nВы очнулись от криков бегущих с корабля пришельцев.");
-        messageWriter.writeMessage("Последнее воспоминание — на Землю вторглись инопланетяне, " +
-                "сразу взяв Вас в плен и захватив рядом с местом посадки Вашу родную деревню.");
-        messageWriter.writeMessage("Они привели Вас к плоскому кораблю, напоминающему летающую тарелку.");
-        messageWriter.writeMessage("Сразу на входе была комната охраны, где Вам в шею вкололи снотворное.");
-        messageWriter.writeMessage("Полностью проснувшись, Вы осмотрелись и поняли, " +
-                "что находитесь в открытой клетке.");
-        messageWriter.writeMessage("На полу лежала записка со странным текстом: " +
-                "\"Мы срочно улетаем в капсулах с этой ужасной планеты. В каждой комнате корабля, " +
-                "кроме тюремной камеры и комнаты охраны, по 3 двери. " +
-                "Найди комнату охраны и сможешь вернуться домой. Удачи.\"");
-        messageWriter.writeMessage("Должно быть, её оставил тот же пришелец, что и открыл камеру. " +
-                "Ваша задача — выбраться. Вперёд!");
+        outputStartMessages();
 
         currentRoom.markRoomAsVisited();
         currentRoom = getExitFromPrison(currentRoom);
@@ -62,6 +50,22 @@ public class AppController {
 
         messageWriter.stop();
         messageReader.stop();
+    }
+
+    private static void outputStartMessages() {
+        messageWriter.writeMessage("\nВы очнулись от криков бегущих с корабля пришельцев.");
+        messageWriter.writeMessage("Последнее воспоминание — на Землю вторглись инопланетяне, " +
+                "сразу взяв Вас в плен и захватив рядом с местом посадки Вашу родную деревню.");
+        messageWriter.writeMessage("Они привели Вас к плоскому кораблю, напоминающему летающую тарелку.");
+        messageWriter.writeMessage("Сразу на входе была комната охраны, где Вам в шею вкололи снотворное.");
+        messageWriter.writeMessage("Полностью проснувшись, Вы осмотрелись и поняли, " +
+                "что находитесь в открытой клетке.");
+        messageWriter.writeMessage("На полу лежала записка со странным текстом: " +
+                "\"Мы срочно улетаем в капсулах с этой ужасной планеты. В каждой комнате корабля, " +
+                "кроме тюремной камеры и комнаты охраны, по 3 двери. " +
+                "Найди комнату охраны и сможешь вернуться домой. Удачи.\"");
+        messageWriter.writeMessage("Должно быть, её оставил тот же пришелец, что и открыл камеру. " +
+                "Ваша задача — выбраться. Вперёд!");
     }
 
     private static Room getExitFromPrison(Room currentRoom) {
